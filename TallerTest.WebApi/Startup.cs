@@ -100,7 +100,14 @@ namespace TallerTest.WebApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCors(builder => builder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .SetIsOriginAllowed((host) => true)
+                .AllowCredentials());
+
+
+        app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

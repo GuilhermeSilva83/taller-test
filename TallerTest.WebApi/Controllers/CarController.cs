@@ -3,6 +3,7 @@ using AutoMapper;
 
 using Microsoft.AspNetCore.Mvc;
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using TallerTest.Domain.Aggregations.CarAgg;
@@ -18,6 +19,13 @@ namespace TallerTest.WebApi.Controllers
         public CarController(IUnitOfWork uow, ICarRepository rep, IMapper mapper) : base(uow, rep, mapper)
         {
 
+        }
+
+        [HttpGet("list-by-makeId/{makeId}")]
+        public async Task<IEnumerable<CarDto>> ListByMakeAsync(int makeId)
+        {
+            var result = await repository.ListByMakeIdAsync(makeId);
+            return mapper.Map<IEnumerable<CarDto>>(result);
         }
     }
 }

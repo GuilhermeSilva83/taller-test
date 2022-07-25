@@ -17,7 +17,7 @@ namespace TallerTest.Domain.Aggregations.CarAgg
         public short Doors { get; set; }
         public decimal Price { get; set; }
 
-        //[ForeignKey(nameof(MakeId))]
-        //public Make Make { get; set; }
+        [ForeignKey(nameof(MakeId))]
+        public Make Make { get; set; }
     }
 }
