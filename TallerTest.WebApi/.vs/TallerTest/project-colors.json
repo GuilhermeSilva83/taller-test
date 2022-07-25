@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6abb2cee-7fa4-475c-84ef-e30851b424a5": {
+      "ProjectGuid": "6abb2cee-7fa4-475c-84ef-e30851b424a5",
+      "DisplayName": "TallerTest.WebApi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
