@@ -32,7 +32,7 @@ namespace TallerTest.Domain.Services
             }
             else
             {
-                return OperationResult.Fail("Failed!");
+                return OperationResult.Fail("Failed! Please try again with your best guess.");
             }
 
         }

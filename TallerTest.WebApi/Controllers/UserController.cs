@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 using TallerTest.Domain.Seedwork;
 using TallerTest.Domain.Services;
+using TallerTest.WebApi.Dto;
 
 namespace TallerTest.WebApi.Controllers
 {
@@ -21,9 +22,9 @@ namespace TallerTest.WebApi.Controllers
 
 
         [HttpPost("guess-price")]
-        public async Task< ActionResult<OperationResult>> GuessPrice (int carId, decimal price)
+        public async Task< ActionResult<OperationResult>> GuessPrice (GuessPriceDto guess)
         {
-            return await userService.GuessCarPriceAsync(carId, price);
+            return await userService.GuessCarPriceAsync(guess.ModelId, guess.Price);
         }
     }
 }
