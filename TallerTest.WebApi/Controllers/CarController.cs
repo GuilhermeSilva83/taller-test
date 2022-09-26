@@ -21,6 +21,14 @@ namespace TallerTest.WebApi.Controllers
 
         }
 
+        [HttpPost]
+        [HttpPut("{id}")]
+        public override OperationResult Save([FromBody] CarDto value, int id)
+        {
+            value.Make = null;
+            return base.Save(value, id);
+        }
+
         [HttpGet("list-by-makeId/{makeId}")]
         public async Task<IEnumerable<CarDto>> ListByMakeAsync(int makeId)
         {
